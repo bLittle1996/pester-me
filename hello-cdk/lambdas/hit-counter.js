@@ -15,7 +15,7 @@ exports.handler = async (event) => {
         },
       },
       UpdateExpression: "ADD hits :incr",
-      ExpressionAttributeValues: { ":incr": { N: 1 } },
+      ExpressionAttributeValues: { ":incr": { N: "1" } },
     })
     .promise();
 
