@@ -1,4 +1,4 @@
-exports.handlers = async (event) => {
+exports.handler = async (event) => {
   console.log("Request: ", JSON.stringify(event, undefined, 2));
   return {
     statusCode: 200,
