@@ -28,5 +28,10 @@ export class HitCounter extends cdk.Construct {
         HIT_COUNTER_TABLE_NAME: hitCounterTable.tableName,
       },
     });
+
+    //  Allow the handler to write to the table
+    hitCounterTable.grantWriteData(this.handler);
+    // Allow the handler to invoke the downstream function
+    props.downstream.grantInvoke(this.handler);
   }
 }
