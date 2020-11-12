@@ -1,5 +1,6 @@
 import * as cdk from "@aws-cdk/core";
 import * as lambda from "@aws-cdk/aws-lambda";
+import * as apiGateway from "@aws-cdk/aws-apigateway";
 
 export class HelloCdkStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -9,6 +10,10 @@ export class HelloCdkStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_12_X,
       code: lambda.Code.fromAsset("lambdas"), // directory to look for handler in
       handler: "hello.handler", // filename.functionname
+    });
+
+    new apiGateway.LambdaRestApi(this, "HelloEndpoint", {
+      handler: helloLambda,
     });
   }
 }
