@@ -7,6 +7,7 @@ export class HelloCdkStack extends cdk.Stack {
 
     new s3.Bucket(this, "MyVeryOwnBucketOfJoy", {
       versioned: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
   }
 }
