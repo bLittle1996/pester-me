@@ -16,12 +16,30 @@ export class CdkStack extends cdk.Stack {
       },
     });
 
-    const userPoolClient = new cognito.UserPoolClient(this, "UserPoolClient", {
-      userPool: userPool,
-      // allow sign in with username (email) and password
-      authFlows: {
-        userPassword: true,
-      },
-    });
+    const userPoolWebClient = new cognito.UserPoolClient(
+      this,
+      "UserPoolWebClient",
+      {
+        userPool: userPool,
+        // allow sign in with username (email) and password (https://docs.amplify.aws/cli/auth/import#import-an-existing-cognito-user-pool)
+        authFlows: {
+          userPassword: true,
+        },
+      }
+    );
+
+    const userPoolNativeClient = new cognito.UserPoolClient(
+      this,
+      "UserPoolNativeClient",
+      {
+        userPool: userPool,
+        // generate a secret key to satisfy amplify requirements,
+        generateSecret: true,
+        // allow sign in with username (email) and password
+        authFlows: {
+          userPassword: true,
+        },
+      }
+    );
   }
 }
