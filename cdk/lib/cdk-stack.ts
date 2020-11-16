@@ -14,6 +14,9 @@ export class CdkStack extends cdk.Stack {
         email: true,
         username: false,
       },
+      autoVerify: {
+        email: true,
+      },
     });
 
     const userPoolWebClient = new cognito.UserPoolClient(
@@ -24,6 +27,7 @@ export class CdkStack extends cdk.Stack {
         // allow sign in with username (email) and password (https://docs.amplify.aws/cli/auth/import#import-an-existing-cognito-user-pool)
         authFlows: {
           userPassword: true,
+          userSrp: true,
         },
       }
     );
@@ -38,6 +42,7 @@ export class CdkStack extends cdk.Stack {
         // allow sign in with username (email) and password
         authFlows: {
           userPassword: true,
+          userSrp: true,
         },
       }
     );
