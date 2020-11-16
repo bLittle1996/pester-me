@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "pestermeweb93197e1d": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

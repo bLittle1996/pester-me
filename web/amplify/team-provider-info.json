@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pestermeweb-dev-163948-authRole",
+      "UnauthRoleArn": "arn:aws:iam::672285407783:role/amplify-pestermeweb-dev-163948-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::672285407783:role/amplify-pestermeweb-dev-163948-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-pestermeweb-dev-163948-deployment",
+      "UnauthRoleName": "amplify-pestermeweb-dev-163948-unauthRole",
+      "StackName": "amplify-pestermeweb-dev-163948",
+      "StackId": "arn:aws:cloudformation:ca-central-1:672285407783:stack/amplify-pestermeweb-dev-163948/41bb4d10-2854-11eb-a0be-06a86094915a",
+      "AmplifyAppId": "d27uwo677pf4sr"
+    },
+    "categories": {
+      "auth": {
+        "pestermeweb93197e1d": {
+          "userPoolId": "ca-central-1_UEUzIi3Se",
+          "userPoolName": "UserPool6BA7E5F2-rkb2HRRxIAhi",
+          "webClientId": "4lhc8jrark1n3f915olgeeg97f",
+          "nativeClientId": "7j2jrh2a3ci1s56d8mtl0fri22"
+        }
+      }
+    }
+  }
+}
