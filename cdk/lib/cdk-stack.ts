@@ -15,5 +15,13 @@ export class CdkStack extends cdk.Stack {
         username: false,
       },
     });
+
+    const userPoolClient = new cognito.UserPoolClient(this, "UserPoolClient", {
+      userPool: userPool,
+      // allow sign in with username (email) and password
+      authFlows: {
+        userPassword: true,
+      },
+    });
   }
 }
