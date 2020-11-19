@@ -15,6 +15,7 @@ interface Props {
 export const SignInForm: FC<Props> = ({ onSubmit }) => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(validationSchema),
+    mode: "onTouched",
   });
 
   return (

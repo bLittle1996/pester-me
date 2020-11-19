@@ -1,10 +1,16 @@
-// You can include shared interfaces/types in a separate file
-// and then use them in any component by importing them. For
-// example, to import the interface below do:
-//
-// import User from 'path/to/interfaces';
+import { DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes } from "react";
 
-export type User = {
-  id: number
-  name: string
+export interface MergableClassName {
+  /**
+   * Whether or not a provided `className` attribute will merge with the default className - or if it should overwrite.
+   * Default behaviour is to merge. Set to `false` to completely customize the style.
+   */
+  mergeClassName?: boolean;
 }
+
+/**
+ * A convenient set of types for exposing react html attributes to a component without costing tens upon tens of keystrokes.
+ * Useful for most types of ui components.
+ */
+export type HTMLProps<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
+export type InputProps<T> = DetailedHTMLProps<InputHTMLAttributes<T>, T>;

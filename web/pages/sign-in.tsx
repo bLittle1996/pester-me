@@ -1,5 +1,6 @@
 import { SignInParameters } from "../auth/sign-in";
-import { SignInForm } from "../components/Auth/SignInForm";
+import { SignInForm } from "../components/auth/SignInForm";
+import { Card } from "../components/containers/Card";
 
 const SignInPage = () => {
   const handleSignIn = ({ email, password }: Partial<SignInParameters>) => {
@@ -8,7 +9,9 @@ const SignInPage = () => {
 
   return (
     <>
-      <SignInForm onSubmit={handleSignIn} />
+      <Card>
+        <SignInForm onSubmit={handleSignIn} />
+      </Card>
     </>
   );
 };
