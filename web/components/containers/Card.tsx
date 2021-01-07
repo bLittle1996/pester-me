@@ -10,7 +10,11 @@ export const Card: FC<HTMLProps<HTMLDivElement> & MergableClassName> = ({
 }) => {
   return (
     <div
-      className={trim(`bg-white p-6 rounded shadow ${className}`)}
+      className={
+        mergeClassName
+          ? trim(`bg-white p-6 rounded shadow ${className}`)
+          : className
+      }
       {...props}
     >
       {children}
